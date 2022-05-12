@@ -170,6 +170,24 @@ validate: ({ string }) => ({
 });
 ```
 
+### Customizing Yup validation
+
+The options to customize Yup's `validate` function can be passed in when initializing the plugin:
+
+```ts
+const schema = makeSchema({
+  ...
+  plugins: [
+    ...
+    validatePlugin({
+      yupValidateOptions: {
+        abortEarly: false,
+      },
+    }),
+  ],
+});
+```
+
 ## API
 
 ##### `validate(rules: ValidationRules, args: Args, ctx: Context) => Promise<Schema | boolean>`
