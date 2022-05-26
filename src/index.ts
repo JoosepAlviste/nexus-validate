@@ -1,6 +1,5 @@
 import { plugin } from 'nexus';
 import { printedGenTyping, printedGenTypingImport } from 'nexus/dist/utils';
-import { ValidateOptions } from 'yup/lib/types';
 
 import { ValidatePluginErrorConfig, ValidationError } from './error';
 import { resolver } from './resolver';
@@ -20,7 +19,6 @@ const fieldDefTypes = printedGenTyping({
 
 export interface ValidatePluginConfig {
   formatError?: (config: ValidatePluginErrorConfig) => Error;
-  yupValidateOptions?: ValidateOptions;
 }
 
 export const validatePlugin = (validateConfig: ValidatePluginConfig = {}) => {

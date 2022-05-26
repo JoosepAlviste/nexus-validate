@@ -2,8 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/nexus-validate)](https://www.npmjs.com/package/nexus-validate)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/nexus-validate)](https://bundlephobia.com/result?p=nexus-validate)
-![build-publish](https://github.com/JoosepAlviste/nexus-validate/workflows/build-publish/badge.svg)
-[![codecov](https://codecov.io/gh/JoosepAlviste/nexus-validate/branch/alpha/graph/badge.svg?token=MR3OPGNYBU)](https://codecov.io/gh/filipstefansson/nexus-validate)
+![build-publish](https://github.com/filipstefansson/nexus-validate/workflows/build-publish/badge.svg)
+[![codecov](https://codecov.io/gh/filipstefansson/nexus-validate/branch/alpha/graph/badge.svg?token=MR3OPGNYBU)](https://codecov.io/gh/filipstefansson/nexus-validate)
 
 Add extra validation to [GraphQL Nexus](https://github.com/graphql-nexus/nexus) in an easy and expressive way.
 
@@ -167,24 +167,6 @@ validate: ({ string }) => ({
   email: string()
     .email('must be a valid email address')
     .required('email is required'),
-});
-```
-
-### Customizing Yup validation
-
-The options to customize Yup's `validate` function can be passed in when initializing the plugin:
-
-```ts
-const schema = makeSchema({
-  ...
-  plugins: [
-    ...
-    validatePlugin({
-      yupValidateOptions: {
-        abortEarly: false,
-      },
-    }),
-  ],
 });
 ```
 

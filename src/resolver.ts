@@ -23,10 +23,7 @@ export type ValidateResolver<
 export const resolver =
   (validateConfig: ValidatePluginConfig = {}) =>
   (config: CreateFieldResolverInfo): MiddlewareFn | undefined => {
-    const {
-      formatError = defaultFormatError,
-      yupValidateOptions,
-    } = validateConfig;
+    const { formatError = defaultFormatError } = validateConfig;
 
     const validate: ValidateResolver<any, any> =
       config.fieldConfig.extensions?.nexus?.config.validate;
@@ -67,7 +64,7 @@ export const resolver =
         if (typeof schemaBase !== 'undefined') {
           const schema = rules.object().shape(schemaBase);
           // update args to the transformed ones by yup
-          args = await schema.validate(args, yupValidateOptions);
+          args = await schema.validate(args);
         }
         return next(root, args, ctx, info);
       } catch (_error) {
