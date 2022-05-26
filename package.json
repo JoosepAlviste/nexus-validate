@@ -1,8 +1,8 @@
 {
-  "name": "nexus-validate",
+  "name": "@joosepalviste/nexus-validate",
   "version": "1.0.0",
   "description": "Validation plugin for Nexus.",
-  "repository": "https://github.com/filipstefansson/nexus-validate",
+  "repository": "https://github.com/JoosepAlviste/nexus-validate",
   "author": "Filip Stefansson <filip.stefansson@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
